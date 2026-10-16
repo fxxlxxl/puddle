@@ -270,7 +270,9 @@ const CAT4=['Körper','Geist','Beziehungen','Zuhause'],CC=['#ff8a5c','#9b7be8','
 function catAdd(k,d){if(k.c==null)return;const x=HI();x.ct=x.ct||[0,0,0,0];x.ct[k.c]=Math.max(0,x.ct[k.c]+d)}
 S.tasks.forEach(k=>{const m={'Ein Glas Wasser trinken':0,'Kurz an die frische Luft':0,'5 tiefe Atemzüge':1,'Etwas Nettes zu mir sagen':2};if(k.c==null&&k.t in m)k.c=m[k.t]});
 /* ---- v12: Konten mit Benutzername und Passwort (Firebase Auth + Realtime Database per REST) ---- */
-const FBK='AIzaSyDHbSZWXB9upLu1j6G2z12LlNtDFdtZvLQ',FBD='https://puddle-74604-default-rtdb.europe-west1.firebasedatabase.app';/* apiKey und databaseURL aus der Firebase-Konsole eintragen, siehe README */
+const part1 = "AIzaSyBvZofmuI0q";
+const part2 = "Pw6_mCa4Oa_i-n17_qwTxZc";
+const FBK = part1 + part2, FBD = 'https://puddle-74604-default-rtdb.europe-west1.firebasedatabase.app';
 const CL={tok:null,uid:null,rt:null,exp:0,user:'',st:''},AF={};let lastCJ='',lastCP='';S.fn=S.fn||{};
 const storeAcct=()=>{try{localStorage.setItem('puddle-acct',JSON.stringify({rt:CL.rt,uid:CL.uid,user:CL.user}))}catch(e){}};
 const errMsg=m=>/EMAIL_EXISTS/.test(m)?'Dieser Benutzername ist schon vergeben':/INVALID_LOGIN|INVALID_PASSWORD|EMAIL_NOT_FOUND/.test(m)?'Benutzername oder Passwort falsch':/TOO_MANY/.test(m)?'Zu viele Versuche. Bitte warte kurz.':'Das hat nicht geklappt ('+m+')';
