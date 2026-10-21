@@ -460,6 +460,19 @@ async function recvGifts(){try{const g=await dbx('gifts/'+CL.uid)||{};GERR=0;let
  if(add)await loadFriends();if(nw)newGift();if(add||nw)sync();if(view=='fr'&&!typing())friends()}catch(e){GERR=/DB40[13]/.test(e.message)?1:0;if(view=='fr'&&!typing())friends()}}
 setInterval(()=>{if(CL.uid&&!document.hidden)recvGifts()},15000);
 addEventListener('visibilitychange',()=>{if(!document.hidden&&CL.uid)recvGifts()});
+/* ---- v30: überarbeitete Sprites, mehr Fundstücke, Mini-Haustiere und Deko ---- */
+Object.assign(SPR,{
+ rock:'...ssss..../..ssssss.../.sskssssss./.ssssssksss/sssssssssss/sssksssssss/sssssssssss',
+ osterei:'..pp../.pppp./.pppp./ywywyw/pppppp/.pppp./..pp..',
+ bug:'..kkkk../.krrrrk./krkrrkrk/krrrrrrk/krkrrkrk/.krrrrk./..kkkk..',
+ bfly:'pp....pp/pyp..pyp/pppkkppp/ppp..ppp/.pp..pp.',
+ snail:'..nnn..k/.nnwnn.g/.nwnnn.g/.nnnnngg/gggggggg/.gggggg.',
+ glow:'.w....w./ww.yy.ww/.wyyyyw./..yyyy../...kk...',
+ turtle:'..GGGG../.GgGGgG./GGGGGGGG/.g.gg.g.',
+ pearl:'..ssss../.swwwws./swwwwwws/swwBwwws/swwwwwBs/.swwwws./..ssss..',
+ leaf:'.....GGG/...GGgG./..GGggG./.GGGggG./.GGggG../GGgG..../G.G...../G.......',
+ schild:'nnnnnnn./nwwwwwn./nnnnnnn./...n..../.nnnnnnn/.nwwwwwn/.nnnnnnn/...n..../...n....'});
+FIND.push('pearl','leaf');MPS.push('turtle');DE.push(['schild','Wegweiser',14,22,58]);
 fit();addEventListener('resize',fit);say(S.en>=5?'happy':'meh');go('home');greet();tick();setInterval(tick,200);
 setInterval(()=>{bl=1;setTimeout(()=>bl=0,200)},3400);setInterval(()=>{if(S.trip)tripUI()},1000);setInterval(()=>{if(document.activeElement!==$('#nm'))sync()},30000);
 </script></body></html>
